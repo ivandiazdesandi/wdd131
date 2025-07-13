@@ -1,0 +1,135 @@
+/* base.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Work+Sans:wght@300;400;500;700&display=swap');
+
+/* Global Styles */
+body {
+  font-family: 'Work Sans', sans-serif;
+  color: #333;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+header {
+  background-color: #2C3E50;
+  color: #fff;
+  padding: 16px;
+  text-align: center;
+}
+
+#course-title {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px;
+  transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+/* Main */
+main {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+/* Content Cards */
+.card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.card h2,
+.card h3 {
+  grid-column: 1 / -1;
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  margin-top: 0;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.card p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* List in second card */
+.card ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.card ul li {
+  margin-bottom: 8px;
+}
+
+.card ul li a {
+  color: #2C3E50;
+  text-decoration: none;
+}
+
+.card ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background-color: #2C3E50;
+  color: #fff;
+  text-align: center;
+  padding: 16px;
+}
+
+footer p {
+  margin: 8px 0;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
