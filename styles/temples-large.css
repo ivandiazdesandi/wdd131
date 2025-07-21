@@ -1,0 +1,27 @@
+@media (min-width: 768px) {
+  /* Show nav & hide toggle */
+  #menu-toggle {
+    display: none;
+  }
+  #nav-menu {
+    display: block;
+  }
+  #nav-menu ul {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+  }
+  #nav-menu li + li {
+    margin-top: 0;
+  }
+
+  /* Album grid: three columns */
+  .album {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Center main h2 under nav bar */
+  main h2 {
+    margin-top: 16px;
+  }
+}

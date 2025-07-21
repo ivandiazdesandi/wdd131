@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+        content="Temple Album – Responsive photo gallery of temple images, with mobile-first design and hamburger menu." />
+  <meta name="author" content="Ivan Diaz de Sandi Alvarez" />
+  <title>Temple Album</title>
+
+  <link rel="stylesheet" href="styles/temples.css" />
+  <link rel="stylesheet" href="styles/temples-large.css" />
+
+  <script src="scripts/temples.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Temple Album</h1>
+    <button id="menu-toggle" aria-label="Toggle menu">☰</button>
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="old.html">Old</a></li>
+        <li><a href="new.html">New</a></li>
+        <li><a href="large.html">Large</a></li>
+        <li><a href="small.html">Small</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Home</h2>
+    <div class="album">
+      <figure>
+        <img src="images/temple1.webp" alt="Temple Image 1" />
+        <figcaption>Tokyo Japan Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple2.jpg" alt="Temple Image 2" />
+        <figcaption>Adelaide Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple3.jpg" alt="Temple Image 3" />
+        <figcaption>Bern Switzerland Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple4.jpg" alt="Temple Image 4" />
+        <figcaption>Anchorage Alaska Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple5.jpeg" alt="Temple Image 5" />
+        <figcaption>Belem Brazil Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple6.webp" alt="Temple Image 6" />
+        <figcaption>Aba Nigeria Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple7.webp" alt="Temple Image 7" />
+        <figcaption>Apia Samoa Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple8.jpg" alt="Temple Image 8" />
+        <figcaption>Abidjan Ivory Coast Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple9.jpg" alt="Temple Image 9" />
+        <figcaption>Arequipa Peru Temple</figcaption>
+      </figure>
+    </div>
+  </main>
+
+  <footer>
+    <p>
+      &copy;
+      <span id="currentyear"></span>
+      Ivan Diaz de Sandi Alvarez • Sydney, Australia
+    </p>
+    <p id="lastModified"></p>
+  </footer>
+</body>
+</html>
