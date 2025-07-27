@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+        content="Iceland – area, population, capital, languages, currency, time zone, calling code, TLD, and weather details in a responsive layout." />
+  <meta name="author" content="Ivan Diaz de Sandi Alvarez" />
+  <title>Iceland</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Work+Sans:wght@300;400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="styles/place.css" />
+  <link rel="stylesheet" href="styles/place-large.css" />
+
+  <script src="scripts/place.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1 class="place-title">Iceland</h1>
+  </header>
+
+  <main>
+    <div class="hero">
+      <picture>
+        <source media="(min-width: 768px)" srcset="images/iceland-large.webp" />
+        <source media="(max-width: 767px)" srcset="images/iceland-small.webp" />
+        <img src="images/iceland-small.webp" alt="Northern lights over Icelandic landscape" />
+      </picture>
+    </div>
+
+    <section class="data">
+      <h2>Data</h2>
+      <dl>
+        <dt>Area:</dt><dd>103,000 sq km</dd>
+        <dt>Population:</dt><dd>376,248</dd>
+        <dt>Capital:</dt><dd>Reykjavík</dd>
+        <dt>Languages:</dt><dd>Icelandic</dd>
+        <dt>Currency:</dt><dd>Icelandic króna</dd>
+        <dt>Time Zone:</dt><dd>UTC+0</dd>
+        <dt>Calling Code:</dt><dd>+354</dd>
+        <dt>Internet TLD:</dt><dd>.is</dd>
+      </dl>
+    </section>
+
+    <section class="weather">
+      <h2>Weather</h2>
+      <div class="weather-icon">
+        <img src="images/weather.svg" alt="Clear sky icon" />
+      </div>
+      <dl>
+        <dt>Temperature:</dt><dd>5 °C</dd>
+        <dt>Conditions:</dt><dd>Clear</dd>
+        <dt>Wind:</dt><dd>10 km/h</dd>
+        <dt>Wind Chill:</dt><dd><span id="windChill"></span></dd>
+      </dl>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Ivan Diaz de Sandi Alvarez • Iceland</p>
+    <p id="lastModified"></p>
+  </footer>
+</body>
+</html>
