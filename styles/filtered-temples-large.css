@@ -1,0 +1,38 @@
+@media (min-width: 768px) {
+  /* Show nav & hide toggle */
+  #menu-toggle {
+    display: none;
+  }
+  #nav-menu {
+    display: block;
+  }
+  #nav-menu ul {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+  }
+
+  /* Temple cards: three-column grid */
+  .album {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  /* Card styling adjustments */
+  .card {
+    text-align: left;
+  }
+  .card img {
+    margin-bottom: 16px;
+  }
+
+  /* Center main heading */
+  main h2 {
+    margin-top: 24px;
+  }
+
+  /* Footer font size */
+  footer {
+    font-size: 1rem;
+  }
+}
