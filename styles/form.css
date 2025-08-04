@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Work+Sans:wght@300;400;500;700&display=swap');
+
+/* Variables */
+:root {
+  --primary-color: #4B0082; 
+  --form-bg: #e2dfe5;
+  --field-bg: #fff;
+  --accent-color: #ffb300;  
+  --text-color: #333;
+  --border-radius: 4px;
+  --spacing: 16px;
+}
+
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Work Sans', sans-serif;
+  color: var(--text-color);
+  background: #fafafa;
+  line-height: 1.5;
+}
+
+/* Main & Layout */
+main {
+  max-width: 480px;
+  margin: 2rem auto;
+  background: var(--form-bg);
+  padding: var(--spacing);
+  border-radius: var(--border-radius);
+}
+h1 {
+  font-family: 'Playfair Display', serif;
+  background: var(--primary-color);
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  margin-bottom: var(--spacing);
+}
+
+/* Form Groups */
+.form-group,
+.rating-group,
+.checkbox-group {
+  margin-bottom: var(--spacing);
+}
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+.required {
+  color: var(--accent-color);
+}
+
+/* Inputs & Selects */
+input[type="text"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  background: var(--field-bg);
+  font-size: 1rem;
+}
+textarea {
+  resize: vertical;
+}
+
+/* Rating Stars */
+.rating-group {
+  display: flex;
+  gap: 8px;
+}
+.rating-group input {
+  display: none;
+}
+.rating-group label {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.rating-group input:checked + label {
+  color: var(--accent-color);
+}
+
+/* Checkboxes */
+.checkbox-group label {
+  display: inline-block;
+  margin-left: 0.5rem;
+  font-weight: normal;
+}
+
+/* Submit Button */
+input[type="submit"] {
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+input[type="submit"]:hover {
+  background: #33005b;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 0.9rem;
+}
+footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
