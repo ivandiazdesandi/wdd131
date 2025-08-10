@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Ivan Diaz de Sandi Alvarez" />
+  <meta name="description" content="TradeWise Markets tools: FOREX pip & P/L calculator, Crypto P/L calculator, and a personal watchlist saved with localStorage." />
+  <title>TradeWise Markets — Tools</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Work+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./base.css">
+  <link rel="stylesheet" href="./large.css">
+
+  <script src="./main.js" defer></script>
+  <script src="./tools.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1>TradeWise Markets</h1>
+      <p class="tagline">Learn • Calculate • Trade Smarter</p>
+    </div>
+    <nav class="site-nav" aria-label="Primary">
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./learn.html">Learn</a></li>
+        <li><a aria-current="page" href="./tools.html">Tools</a></li>
+        <li><a href="./references.html">References</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero hero-compact">
+      <picture>
+        <source srcset="images/tools-calculator.png" media="(min-width: 768px)" type="image/png">
+        <img src="images/tools-calculator.png" alt="Minimal desk with calculator and chart on screen">
+      </picture>
+      <div class="hero-msg">
+        <h2>Simple, Useful Tools</h2>
+        <p>Plan the trade, then trade the plan. Calculate P/L and keep a watchlist—saved to your browser.</p>
+      </div>
+    </section>
+
+    <section class="content">
+      <h2>Quick Risk Notice</h2>
+      <p>Trading involves risk. These tools are for education only and do not constitute financial advice.</p>
+      <label class="inline">
+        <input type="checkbox" id="riskConsent">
+        I understand and accept the risks.
+      </label>
+      <p id="consentHint" class="muted">Enable this to use the calculators.</p>
+    </section>
+
+    <section class="content" aria-labelledby="fxCalcHeading">
+      <h2 id="fxCalcHeading">FOREX Pip &amp; P/L Calculator</h2>
+
+      <form class="tool-form" id="fxForm" novalidate>
+        <div class="grid-2">
+          <div class="form-group">
+            <label for="pairType">Pair Type</label>
+            <select id="pairType" name="pairType">
+              <option value="nonjpy" selected>Non-JPY quote (pip = 0.0001)</option>
+              <option value="jpy">JPY quote (pip = 0.01)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="lotSize">Lot Size</label>
+            <select id="lotSize" name="lotSize">
+              <option value="1">Standard (1.00)</option>
+              <option value="0.1">Mini (0.10)</option>
+              <option value="0.01">Micro (0.01)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="entryPrice">Entry Price</label>
+            <input type="number" id="entryPrice" name="entryPrice" step="0.00001" min="0" required>
+          </div>
+
+          <div class="form-group">
+            <label for="exitPrice">Exit Price</label>
+            <input type="number" id="exitPrice" name="exitPrice" step="0.00001" min="0" required>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button type="button" id="fxCalcBtn" class="cta">Calculate</button>
+          <button type="reset" class="secondary">Clear</button>
+        </div>
+
+        <div class="results" aria-live="polite" id="fxResults"></div>
+      </form>
+
+      <p class="muted small">Assumptions: USD-quoted pairs, pip value ≈ $10 (standard), $1 (mini), $0.10 (micro).</p>
+    </section>
+
+    <section class="content" aria-labelledby="cryptoCalcHeading">
+      <h2 id="cryptoCalcHeading">Crypto P/L Calculator</h2>
+
+      <form class="tool-form" id="cryptoForm" novalidate>
+        <div class="grid-3">
+          <div class="form-group">
+            <label for="coinSymbol">Symbol</label>
+            <input type="text" id="coinSymbol" name="coinSymbol" placeholder="BTC, ETH…" maxlength="10">
+          </div>
+
+          <div class="form-group">
+            <label for="cryptoEntry">Entry Price (USD)</label>
+            <input type="number" id="cryptoEntry" name="cryptoEntry" step="0.01" min="0" required>
+          </div>
+
+          <div class="form-group">
+            <label for="cryptoExit">Exit Price (USD)</label>
+            <input type="number" id="cryptoExit" name="cryptoExit" step="0.01" min="0" required>
+          </div>
+
+          <div class="form-group">
+            <label for="cryptoSize">Position Size (coins)</label>
+            <input type="number" id="cryptoSize" name="cryptoSize" step="0.0001" min="0" required>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button type="button" id="cryptoCalcBtn" class="cta">Calculate</button>
+          <button type="reset" class="secondary">Clear</button>
+        </div>
+
+        <div class="results" aria-live="polite" id="cryptoResults"></div>
+      </form>
+    </section>
+
+    <section class="content" aria-labelledby="watchHeading">
+      <h2 id="watchHeading">My Watchlist</h2>
+      <form id="watchForm" class="tool-form small-row" autocomplete="off">
+        <div class="form-group">
+          <label for="watchSymbol">Symbol</label>
+          <input type="text" id="watchSymbol" name="watchSymbol" placeholder="EURUSD, BTCUSDT…" maxlength="15" required>
+        </div>
+        <div class="form-group">
+          <label for="watchNote">Note</label>
+          <input type="text" id="watchNote" name="watchNote" placeholder="Breakout at 1.09…" maxlength="60">
+        </div>
+        <div class="actions">
+          <button type="submit" class="cta">Add</button>
+          <button type="button" id="clearWatch" class="secondary">Clear All</button>
+        </div>
+      </form>
+
+      <ul id="watchList" class="watch-list" aria-live="polite"></ul>
+      <p class="muted small">Saved to your browser (localStorage). No account required.</p>
+    </section>
+
+    <section class="content" aria-labelledby="contactHeading">
+      <h2 id="contactHeading">Questions or Feedback</h2>
+      <form class="tool-form" id="contactForm" action="#" method="get" novalidate>
+        <div class="grid-2">
+          <div class="form-group">
+            <label for="userName">Name (Optional)</label>
+            <input type="text" id="userName" name="userName" maxlength="60">
+          </div>
+          <div class="form-group">
+            <label for="userEmail">Email (Optional)</label>
+            <input type="email" id="userEmail" name="userEmail" maxlength="120" placeholder="name@example.com">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="userMsg">Message</label>
+          <textarea id="userMsg" name="userMsg" rows="4" placeholder="Write your message…"></textarea>
+        </div>
+        <div class="actions">
+          <button type="submit" class="cta">Send</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Ivan Diaz de Sandi Alvarez • Sydney, Australia</p>
+    <p id="lastModified"></p>
+    <p><a href="./references.html">References & Attributions</a></p>
+  </footer>
+</body>
+</html>

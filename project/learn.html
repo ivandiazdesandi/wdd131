@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Ivan Diaz de Sandi Alvarez" />
+  <meta name="description" content="Learn the essentials of FOREX and cryptocurrency: pairs, pips, wallets, risk, and common terms. Built for beginners at TradeWise Markets." />
+  <title>TradeWise Markets — Learn</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Work+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./base.css">
+  <link rel="stylesheet" href="./large.css">
+
+  <script src="./main.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1>TradeWise Markets</h1>
+      <p class="tagline">Learn • Calculate • Trade Smarter</p>
+    </div>
+    <nav class="site-nav" aria-label="Primary">
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a aria-current="page" href="./learn.html">Learn</a></li>
+        <li><a href="./tools.html">Tools</a></li>
+        <li><a href="./references.html">References</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero hero-compact">
+      <picture>
+        <source srcset="images/hero-trading.png" media="(min-width: 768px)" type="image/png">
+        <img src="images/hero-trading.png" alt="Notebook with trading notes and a chart on a laptop" />
+      </picture>
+      <div class="hero-msg">
+        <h2>Learn the Foundations</h2>
+        <p>A quick, beginner-friendly guide to FOREX and Crypto so you can use the tools with confidence.</p>
+      </div>
+    </section>
+
+    <section id="forex" class="content">
+      <h2>FOREX Basics</h2>
+      <p>The foreign exchange (FOREX) market trades currencies in <strong>pairs</strong> (e.g., <code>EUR/USD</code>). The first currency is the <em>base</em>, the second is the <em>quote</em>. If EUR/USD = 1.0800, one euro costs 1.08 US dollars.</p>
+
+      <div class="grid-2">
+        <article class="card">
+          <h3>Key Terms</h3>
+          <dl class="terms">
+            <dt>Pip</dt><dd>Smallest price move (usually 0.0001). Used to measure distance and profit/loss.</dd>
+            <dt>Spread</dt><dd>Difference between bid and ask; a trading cost.</dd>
+            <dt>Lot Size</dt><dd>Trade volume (micro 0.01, mini 0.10, standard 1.00).</dd>
+            <dt>Session</dt><dd>Active market hours (London, New York, Tokyo, Sydney).</dd>
+          </dl>
+        </article>
+
+        <article class="card">
+          <h3>How Profit/Loss Works</h3>
+          <p>P/L depends on: distance in pips, lot size, and the pair’s pip value. Our <a class="text-link" href="./tools.html">Pip &amp; P/L calculator</a> does this for you.</p>
+          <img loading="lazy" src="images/market-candles.png" alt="EUR/USD example chart with pip movement" />
+        </article>
+      </div>
+    </section>
+
+    <section id="crypto" class="content">
+      <h2>Crypto Basics</h2>
+      <p>Cryptocurrencies are digital assets that trade 24/7 and can be highly volatile. You’ll typically store assets in a <strong>wallet</strong> and trade on an exchange using spot or derivatives.</p>
+
+      <div class="grid-2">
+        <article class="card">
+          <h3>Key Concepts</h3>
+          <ul>
+            <li><strong>Coins vs. Tokens:</strong> Coins run on their own chain (e.g., BTC); tokens live on another chain (e.g., ERC-20 on Ethereum).</li>
+            <li><strong>Wallets:</strong> Custodial (held by an exchange) or non-custodial (you hold the keys).</li>
+            <li><strong>Fees &amp; Slippage:</strong> Know your costs and expected fill.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Risk Snapshot</h3>
+          <p>Crypto moves fast. Manage position size, use stop-losses, and avoid over-leverage. Use our simple <a class="text-link" href="./tools.html#pl">Crypto P/L</a> tool to preview outcomes.</p>
+          <img loading="lazy" src="images/crypto-coins.png" alt="Crypto price movement illustration" />
+        </article>
+      </div>
+    </section>
+
+    <section class="cta-strip">
+      <p>Feeling ready? Test your understanding with the calculators.</p>
+      <a class="cta" href="./tools.html">Open Tools</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Ivan Diaz de Sandi Alvarez • Sydney, Australia</p>
+    <p id="lastModified"></p>
+    <p><a href="./references.html">References & Attributions</a></p>
+  </footer>
+</body>
+</html>

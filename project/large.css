@@ -1,0 +1,39 @@
+@media (min-width: 700px){
+  main{padding:0 1.25rem 3rem}
+
+  .hero .hero-msg{
+    margin:-3rem auto 0;
+    padding:1.5rem 1.25rem;
+  }
+
+  .highlights{grid-template-columns: repeat(2, 1fr); gap:1.25rem}
+  .grid-2{grid-template-columns: repeat(2, 1fr)}
+  .grid-3{grid-template-columns: repeat(3, 1fr)}
+
+  .tool-form{padding:1.25rem}
+  .actions{justify-content:flex-start}
+}
+
+@media (min-width: 1024px){
+  .site-nav ul{gap:1rem}
+
+  .hero .hero-msg h2{font-size:1.65rem}
+
+  .highlights{
+    max-width:var(--maxw);
+    margin:0 auto;
+    grid-template-columns: repeat(3, 1fr);
+    gap:1.25rem;
+    padding:1.25rem;
+  }
+
+  .content{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:2rem 1.5rem;
+  }
+
+  input, select, textarea, button{
+    padding:.7rem .8rem;
+  }
+}
